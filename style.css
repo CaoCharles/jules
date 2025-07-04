@@ -1,0 +1,281 @@
+/* 全局樣式 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0f18; /* 深藍背景 */
+    color: #e0e0e0; /* 淺色文字 */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #61dafb; /* 亮藍色標題 */
+    font-weight: 300;
+}
+
+a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #bbe1fa;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 導航欄 */
+header {
+    background-color: rgba(16, 23, 36, 0.8); /* 半透明深藍 */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 0.5rem;
+}
+
+/* 主要內容區域 */
+main {
+    padding-top: 80px; /* 避免內容被固定導航欄遮擋 */
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(97, 218, 251, 0.2); /* 亮藍色細分隔線 */
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Hero 區域 */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(rgba(10, 15, 24, 0.8), rgba(10, 15, 24, 0.9)), url('placeholder-bg.jpg') no-repeat center center/cover; /* 稍後替換背景圖 */
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #61dafb;
+    color: #0a0f18;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: #61dafb;
+    border: 2px solid #61dafb;
+    transform: translateY(-3px);
+}
+
+/* 功能區域 */
+#features h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background-color: rgba(22, 31, 49, 0.7); /* 半透明卡片背景 */
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    fill: #61dafb; /* 針對 SVG 圖標 */
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 關於我們 & 聯繫我們 */
+#about h2, #contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+#about p, #contact p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+/* 聯繫表單 */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    padding: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(97, 218, 251, 0.5);
+    border-radius: 4px;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: #a0a0a0;
+}
+
+form button[type="submit"] {
+    align-self: center; /* 按鈕居中 */
+}
+
+/* 頁腳 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #080c13; /* 更深的背景 */
+    margin-top: 2rem;
+    border-top: 1px solid rgba(97, 218, 251, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.5rem;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+        border-bottom: none;
+        background-color: rgba(97, 218, 251, 0.1);
+        border-radius: 4px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    #features h2, #about h2, #contact h2 {
+        font-size: 2rem;
+    }
+}
